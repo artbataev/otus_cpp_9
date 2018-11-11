@@ -10,7 +10,9 @@ project(rai_bccl VERSION ${PROJECT_VERSION} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(rai_bccl_demo src/main.cpp)
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
+add_executable(rai_bccl_demo src/demo.cpp include/rai_concept.h)
 
 install(TARGETS rai_bccl_demo RUNTIME DESTINATION bin)
 
