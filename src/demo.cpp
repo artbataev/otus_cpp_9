@@ -8,6 +8,7 @@ template <typename T>
 class DemoIteratorWithDeletedMethods: public std::vector<T>::iterator {
 public:
 //    template <typename U> bool operator==(U rhs) = delete; // EqualityComparableCheck will fail
+//    DemoIteratorWithDeletedMethods() = delete; // DefaultConstructibleCheck will fail
 };
 
 int main() {
