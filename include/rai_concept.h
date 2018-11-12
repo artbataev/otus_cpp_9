@@ -14,11 +14,13 @@
 // DefaultConstructible
 // EqualityComparable
 
-namespace rai_concept {
-
+namespace {
     template<typename T>
     void suppress_warning(T value) {}
+}
 
+
+namespace rai_concept {
     // https://en.cppreference.com/w/cpp/named_req/EqualityComparable
     template<typename T>
     struct EqualityComparableCheck {
@@ -37,7 +39,7 @@ namespace rai_concept {
             T u;
             T u1{};
             T();
-//            T{};
+            suppress_warning(T{});
         }
     };
 
@@ -47,7 +49,6 @@ namespace rai_concept {
         BOOST_CONCEPT_USAGE(InputIteratorCheck) {
             bool t = (i != j);
             *i;
-//            i->m;
             ++i;
             (void) i++;
             *i++;
@@ -95,10 +96,10 @@ namespace rai_concept {
             i - n;
             b - a;
             i[n];
-            bool tmp_value = (a < b);
-            tmp_value = (a > b);
-            tmp_value = (a >= b);
-            tmp_value = (a <= b);
+            bool _ = (a < b);
+            _ = (a > b);
+            _ = (a >= b);
+            _ = (a <= b);
         }
 
     private:
