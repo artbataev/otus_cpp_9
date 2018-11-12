@@ -94,10 +94,10 @@ namespace rai_concept {
             i - n;
             b - a;
             i[n];
-            bool _ = (a < b);
-            _ = (a > b);
-            _ = (a >= b);
-            _ = (a <= b);
+            bool _ = (a < b); suppress_warning(_);
+            _ = (a > b); suppress_warning(_);
+            _ = (a >= b); suppress_warning(_);
+            _ = (a <= b); suppress_warning(_);
         }
 
     private:
