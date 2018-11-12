@@ -16,6 +16,9 @@ public:
 //    DemoIteratorWithDeletedMethods operator--() = delete; // BidirectionalIteratorCheck will fail
 
 //    template <typename U> DemoIteratorWithDeletedMethods operator-=(U rhs) = delete; // RandomAccessIteratorCheck will fail
+
+//    template <typename U> DemoIteratorWithDeletedMethods operator+=(U rhs) = delete; // RandomAccessIteratorCheck will fail
+
 };
 
 int main() {

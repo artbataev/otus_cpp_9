@@ -86,9 +86,7 @@ namespace rai_concept {
     // https://en.cppreference.com/w/cpp/named_req/RandomAccessIterator
     template<typename T>
     struct RandomAccessIteratorCheck : BidirectionalIteratorCheck<T> {
-        using It = T;
         BOOST_CONCEPT_USAGE(RandomAccessIteratorCheck) {
-            int n = 10;
             r += n;
             a + n;
             n + a;
@@ -103,7 +101,8 @@ namespace rai_concept {
         }
 
     private:
-        It r;
-        It i, a, b;
+        T r;
+        T i, a, b;
+        typename std::iterator_traits<T>::difference_type n;
     };
 }
