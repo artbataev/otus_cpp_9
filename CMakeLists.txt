@@ -10,6 +10,8 @@ project(rai_bccl VERSION ${PROJECT_VERSION} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(Boost REQUIRED)
+
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 add_executable(rai_bccl_demo src/demo.cpp include/rai_concept.h)
